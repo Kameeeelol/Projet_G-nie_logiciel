@@ -1,0 +1,101 @@
+{
+  "project_name": "StageConnect (Platforme de Stage et Emploi)",
+  "design_philosophy": {
+    "theme": "Dark Mode Professional (Linear-Inspired)",
+    "core_concept": "Frictionless, dense, keyboard-friendly interface. High contrast text on dark navy backgrounds. Subtle borders over heavy shadows.",
+    "language": "fr-FR (French)",
+    "vibe": "Elite, Precision, Clarity"
+  },
+  "typography": {
+    "font_family": {
+      "sans": ["Inter", "sans-serif"],
+      "mono": ["JetBrains Mono", "monospace"]
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-semibold tracking-tight",
+      "h2": "text-3xl font-medium tracking-tight",
+      "h3": "text-xl font-medium tracking-normal",
+      "body": "text-sm md:text-base font-normal tracking-normal text-slate-300",
+      "small": "text-xs font-medium tracking-wide uppercase text-slate-400",
+      "label": "text-[13px] font-medium text-slate-400"
+    },
+    "rules": [
+      "Headings MUST use tracking-tight (-0.025em).",
+      "Overlines/Labels MUST be uppercase with tracking-wide (0.05em).",
+      "Body text should never be pure white (#FFFFFF). Use Slate-200 or Slate-300 for readability without eye strain."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "background": "#0F172A",
+      "surface": "#1E293B",
+      "surface_highlight": "#334155",
+      "border": "rgba(148, 163, 184, 0.1)",
+      "text_primary": "#F8FAFC",
+      "text_secondary": "#94A3B8",
+      "primary": "#6366F1",
+      "primary_hover": "#4F46E5",
+      "accent_emerald": "#10B981",
+      "danger": "#EF4444"
+    },
+    "tailwind_mapping": {
+      "bg-background": "bg-slate-950",
+      "bg-card": "bg-slate-900",
+      "text-foreground": "text-slate-50",
+      "text-muted": "text-slate-400",
+      "border-border": "border-slate-800",
+      "bg-primary": "bg-indigo-500 hover:bg-indigo-600",
+      "text-primary": "text-white"
+    },
+    "gradients": {
+      "hero_glow": "bg-gradient-to-b from-indigo-500/20 to-transparent",
+      "card_hover": "hover:bg-slate-800/50 transition-colors duration-200"
+    }
+  },
+  "layout_strategy": {
+    "spacing": "Relaxed. Use p-6 or p-8 for cards. Gap-6 for grids.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "border_radius": "rounded-lg (8px) for cards, rounded-md (6px) for buttons. Avoid fully rounded corners unless pill-buttons.",
+    "grids": {
+      "candidate_dashboard": "grid-cols-1 md:grid-cols-12 gap-6 (Bento Grid: Hero 8 cols, Side 4 cols)",
+      "recruiter_dashboard": "grid-cols-1 gap-4 (Dense Lists)"
+    }
+  },
+  "component_overrides": {
+    "Button": "h-9 px-4 text-sm font-medium rounded-md transition-all active:scale-95 shadow-sm hover:shadow-indigo-500/20",
+    "Card": "bg-slate-900 border border-slate-800 shadow-sm hover:border-slate-700 transition-colors",
+    "Input": "bg-slate-950 border-slate-800 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 h-10 rounded-md",
+    "Badge": "rounded-full px-2.5 py-0.5 text-xs font-medium border border-transparent",
+    "Dialog": "bg-slate-900 border-slate-800 text-slate-50 sm:max-w-[425px]"
+  },
+  "assets": {
+    "icons_library": "lucide-react",
+    "images": {
+      "hero_student": "https://images.unsplash.com/photo-1627162282714-26844e31c78c?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "hero_recruiter": "https://images.unsplash.com/photo-1758873269317-51888e824b28?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "avatars": [
+        "https://images.unsplash.com/photo-1553174715-655062747e9e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "https://images.unsplash.com/photo-1645079080647-d9b07aec5367?crop=entropy&cs=srgb&fm=jpg&q=85"
+      ],
+      "placeholders": {
+        "company_logo_tech": "https://images.unsplash.com/photo-1764085793775-5af6bdb930a9?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "company_logo_finance": "https://images.unsplash.com/photo-1762962531242-b5d47913d709?crop=entropy&cs=srgb&fm=jpg&q=85"
+      }
+    }
+  },
+  "universal_guidelines": [
+    "LANGUAGE: ALL USER FACING TEXT MUST BE IN FRENCH (fr-FR).",
+    "NO DEFAULT GRADIENTS: Use solid dark colors with subtle 1px borders for depth.",
+    "INTERACTIVITY: Every clickable element must have a hover state (brightness-110 or bg-slate-800).",
+    "DATA DENSITY: For Recruiter views, prioritize density (small text, tight rows). For Candidate views, prioritize focus (cards, whitespace).",
+    "ACCESSIBILITY: Ensure text-slate-400 is not used on dark backgrounds for essential text; use text-slate-300 minimum.",
+    "TESTING: Add data-testid to all inputs, buttons, and cards."
+  ],
+  "instructions_to_main_agent": [
+    "Setup 'dark' class in tailwind config as default.",
+    "Install 'lucide-react', 'date-fns' (for French dates), 'recharts'.",
+    "For the Kanban board, use 'dnd-kit' or simply a grid layout if drag-drop is too complex for MVP.",
+    "Use 'sonner' for toast notifications.",
+    "Implement Role-Based Access Control (RBAC) logic in the frontend layout wrapper."
+  ]
+}
